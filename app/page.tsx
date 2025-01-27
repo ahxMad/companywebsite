@@ -211,7 +211,7 @@ export default function Page() {
           <div className="container px-4 md:px-6">
             <div className="flex justify-center mb-8">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-01-07%2023.14.47%20-%20A%20modern%20and%20minimalist%20logo%20design%20for%20a%20company%20named%20'MindAide%20Labs'.%20The%20logo%20features%20a%20sleek%20brain-inspired%20design%20combined%20with%20futuristic%20tech.jpg-AN4Mu2IthK79Pps0PotwhrsC5A1L8I.webp"
+                src="/mindaide-logo.jpg"
                 alt="MindAide Labs Logo"
                 width="120"
                 height="120"
