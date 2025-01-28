@@ -216,7 +216,7 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-slate-700 to-zinc-700 text-2xl px-14 py-9 text-white hover:opacity-90 transition-opacity"
+                className="bg-gradient-to-r from-slate-700 to-zinc-700 text-2xl px-14 py-7 text-white hover:opacity-90 transition-opacity"
                 onClick={handleContactClick}
               >
                 Contact Us
@@ -225,7 +225,7 @@ export default function Page() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-slate-300 text-slate-700 text-2xl px-14 py-9 hover:bg-slate-100"
+                className="border-slate-300 text-slate-700 text-2xl px-14 py-7 hover:bg-slate-100"
                 onClick={scrollToAIProducts}
               >
                 View Products
@@ -235,7 +235,7 @@ export default function Page() {
         </section>
 
         {/* Features Section */}
-        <section className="py-20 relative overflow-hidden">
+        <section className="py-3 relative overflow-hidden">
           <div className="container px-4 md:px-6">
             <div className="flex justify-center mb-12">
               <Image
@@ -246,7 +246,7 @@ export default function Page() {
                 className="rounded-2xl opacity-90"
               />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-slate-800">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-14 text-slate-800">
               Why Choose <span className="text-slate-600">MindAide</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative">
