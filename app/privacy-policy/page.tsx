@@ -30,10 +30,10 @@ export default function PrivacyPolicy() {
               We collect the following types of information:
             </p>
             <ul className="list-disc ml-6 space-y-2">
-              <li className="text-base">Personal information you provide (e.g., name, email address and youtube channel).</li>
-              <li className="text-base">Account-related information (e.g., username, password and subscription plan).</li>
-              <li className="text-base">Usage data (e.g., how you interact with our website and services).</li>
-              <li className="text-base">Payment information (e.g., billing address, payment details for subscriptions).</li>
+              <li className="text-base">Personal information you provide (e.g. name, email address and phone number).</li>
+              <li className="text-base">Account-related information (e.g. username, password and subscription plan).</li>
+              <li className="text-base">Usage data (e.g. how you interact with our website and services).</li>
+              <li className="text-base">Payment information (e.g. billing address, payment details for subscriptions).</li>
             </ul>
           </CardContent>
         </Card>
@@ -141,7 +141,7 @@ export default function PrivacyPolicy() {
             <p className="text-base">
               If you have any questions or concerns about this Privacy Policy or your personal data, please contact us at:
             </p>
-            <p className="font-bold text-lg">Email: mind.aide.ltd@gmail.com</p>
+            <p className="font-bold text-lg">Email: contact@mindaide.co</p>
           </CardContent>
         </Card>
       </div>

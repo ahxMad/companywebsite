@@ -12,11 +12,11 @@ import { ContactModal } from "@/components/contact-modal"
 
 export default function Page() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const aiSolutionsRef = useRef<HTMLElement>(null)
+  const aiProductsRef = useRef<HTMLElement>(null)
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
-  const scrollToAISolutions = () => {
-    aiSolutionsRef.current?.scrollIntoView({ behavior: "smooth" })
+  const scrollToAIProducts = () => {
+    aiProductsRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
   const handleContactClick = () => {
@@ -189,7 +189,7 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-slate-700 to-zinc-700 text-white hover:opacity-90 transition-opacity"
+                className="bg-gradient-to-r from-slate-700 to-zinc-700 text-2xl px-14 py-9 text-white hover:opacity-90 transition-opacity"
                 onClick={handleContactClick}
               >
                 Contact Us
@@ -198,8 +198,8 @@ export default function Page() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-slate-300 text-slate-700 hover:bg-slate-100"
-                onClick={scrollToAISolutions}
+                className="border-slate-300 text-slate-700 text-2xl px-14 py-9 hover:bg-slate-100"
+                onClick={scrollToAIProducts}
               >
                 View Products
               </Button>
@@ -210,26 +210,26 @@ export default function Page() {
         {/* Features Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="container px-4 md:px-6">
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-12">
               <Image
                 src="/mindaide-logo.jpg"
                 alt="MindAide Labs Logo"
-                width="120"
-                height="120"
+                width="160"
+                height="160"
                 className="rounded-2xl opacity-90"
               />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-slate-800">
               Why Choose <span className="text-slate-600">MindAide</span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-slate-300 transition-all duration-300 shadow-sm"
+                  className="p-8 rounded-xl bg-gradient-to-b from-white to-slate-50 border border-slate-200 hover:border-slate-300 transition-all duration-300 shadow-sm"
                 >
-                  <h3 className="text-xl font-semibold mb-3 text-slate-700">{feature.title}</h3>
-                  <p className="text-slate-600">{feature.description}</p>
+                  <h3 className="text-2xl font-semibold mb-4 text-slate-700">{feature.title}</h3>
+                  <p className="text-lg text-slate-600">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -237,9 +237,9 @@ export default function Page() {
         </section>
 
         {/* Products Showcase */}
-        <section className="py-20 relative" ref={aiSolutionsRef}>
+        <section className="py-20 relative" ref={aiProductsRef}>
           <div className="container px-4 md:px-6 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-12 text-slate-800">Our AI Solutions</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-12 text-slate-800">Our AI Products</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map((product) => (
                 <Card
@@ -275,16 +275,19 @@ export default function Page() {
               <div>
                 <h3 className="text-lg font-semibold mb-4 text-slate-800">Quick Links</h3>
                 <div className="grid gap-2">
-                  <Link href="#" className="text-slate-600 hover:text-slate-800 transition-colors">
-                    About Us
-                  </Link>
-                  <Link href="#" className="text-slate-600 hover:text-slate-800 transition-colors">
+                  <button
+                    onClick={scrollToAIProducts}
+                    className="text-slate-600 hover:text-slate-800 transition-colors text-left"
+                  >
                     Products
-                  </Link>
-                  <Link href="#" className="text-slate-600 hover:text-slate-800 transition-colors">
+                  </button>
+                  <button
+                    onClick={handleContactClick}
+                    className="text-slate-600 hover:text-slate-800 transition-colors text-left"
+                  >
                     Contact
-                  </Link>
-                  <Link href="#" className="text-slate-600 hover:text-slate-800 transition-colors">
+                  </button>
+                  <Link href="/privacy-policy" className="text-slate-600 hover:text-slate-800 transition-colors">
                     Privacy Policy
                   </Link>
                 </div>
@@ -292,10 +295,20 @@ export default function Page() {
               <div>
                 <h3 className="text-lg font-semibold mb-4 text-slate-800">Connect</h3>
                 <div className="flex gap-4">
-                  <Link href="#" className="text-slate-600 hover:text-slate-800 transition-colors">
+                  <Link
+                    href="https://x.com/MindAideCo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-slate-800 transition-colors"
+                  >
                     <Twitter className="h-6 w-6" />
                   </Link>
-                  <Link href="#" className="text-slate-600 hover:text-slate-800 transition-colors">
+                  <Link
+                    href="https://linkedin.com/company/mindaideltd"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-slate-800 transition-colors"
+                  >
                     <Linkedin className="h-6 w-6" />
                   </Link>
                   <button
@@ -308,7 +321,7 @@ export default function Page() {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t border-slate-200 text-center text-slate-600">
-              <p>© 2024 MindAide Labs. All rights reserved.</p>
+              <p>© 2025 MindAide Ltd. All rights reserved.</p>
             </div>
           </div>
         </footer>
