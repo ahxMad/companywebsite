@@ -1,7 +1,20 @@
 "use client"
 
 import Head from "next/head"
-import { ArrowRight, Brain, Chrome, Linkedin, MessageSquare, Smartphone, Twitter, Mail } from "lucide-react"
+import {
+  ArrowRight,
+  Brain,
+  Chrome,
+  Linkedin,
+  MessageSquare,
+  Smartphone,
+  Twitter,
+  Mail,
+  Mic,
+  BookOpen,
+  Pen,
+  BarChart,
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
@@ -129,6 +142,22 @@ export default function Page() {
       link: "https://brainbugs.community",
       icon: <MessageSquare className="h-12 w-12" />,
       type: "Community Platform",
+    },
+    {
+      name: "NogginNotes",
+      description:
+        "Capture your thoughts anytime to reduce distraction. Uses audio recording and transcripts for seamless idea capture and retrieval.",
+      link: "https://nogginnotes.app",
+      icon: <Mic className="h-12 w-12" />,
+      type: "Mobile & Desktop App",
+    },
+    {
+      name: "Journal AI",
+      description:
+        "AI-powered journaling tool that allows you to mind dump and generates insights and ideas in real-time as you type.",
+      link: "https://journalai.app",
+      icon: <BookOpen className="h-12 w-12" />,
+      type: "Web Application",
     },
   ]
 
