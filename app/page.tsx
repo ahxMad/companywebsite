@@ -1,28 +1,26 @@
 "use client"
 
-import {
-  ArrowRight,
-  Brain,
-  Chrome,
-  Github,
-  Linkedin,
-  MessageSquare,
-  Smartphone,
-  Twitter,
-} from "lucide-react"
+import Head from "next/head"
+import { ArrowRight, Brain, Chrome, Github, Linkedin, MessageSquare, Smartphone, Twitter, Mail } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { ContactModal } from "@/components/contact-modal"
 
 export default function Page() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const aiSolutionsRef = useRef<HTMLElement>(null)
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const scrollToAISolutions = () => {
     aiSolutionsRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  const handleContactClick = () => {
+    setIsContactModalOpen(true)
   }
 
   useEffect(() => {
@@ -132,7 +130,6 @@ export default function Page() {
       icon: <MessageSquare className="h-12 w-12" />,
       type: "Community Platform",
     },
-  
   ]
 
   const features = [
@@ -156,6 +153,9 @@ export default function Page() {
 
   return (
     <main className="flex min-h-screen flex-col bg-gradient-to-b from-slate-50 to-zinc-100 text-slate-900 relative overflow-hidden">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+      </Head>
       {/* Brain outline */}
       <div className="absolute inset-0 pointer-events-none">
         <svg viewBox="0 0 1000 1000" className="w-full h-full opacity-10">
@@ -190,6 +190,7 @@ export default function Page() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-slate-700 to-zinc-700 text-white hover:opacity-90 transition-opacity"
+                onClick={handleContactClick}
               >
                 Contact Us
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -200,7 +201,7 @@ export default function Page() {
                 className="border-slate-300 text-slate-700 hover:bg-slate-100"
                 onClick={scrollToAISolutions}
               >
-                View Apps
+                View Products
               </Button>
             </div>
           </div>
@@ -297,9 +298,12 @@ export default function Page() {
                   <Link href="#" className="text-slate-600 hover:text-slate-800 transition-colors">
                     <Linkedin className="h-6 w-6" />
                   </Link>
-                  <Link href="#" className="text-slate-600 hover:text-slate-800 transition-colors">
-                    <Github className="h-6 w-6" />
-                  </Link>
+                  <button
+                    onClick={handleContactClick}
+                    className="text-slate-600 hover:text-slate-800 transition-colors"
+                  >
+                    <Mail className="h-6 w-6" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -309,6 +313,7 @@ export default function Page() {
           </div>
         </footer>
       </div>
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
     </main>
   )
 }
