@@ -1,7 +1,7 @@
 "use client"
 
 import Head from "next/head"
-import { ArrowRight, Brain, Chrome, Github, Linkedin, MessageSquare, Smartphone, Twitter, Mail } from "lucide-react"
+import { ArrowRight, Brain, Chrome, Linkedin, MessageSquare, Smartphone, Twitter, Mail } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"

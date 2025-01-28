@@ -23,7 +23,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               contact@mindaide.co
             </a>
           </p>
-          <p className="text-slate-700">We'll get back to you as soon as possible.</p>
+          <p className="text-slate-700">We&apos;ll get back to you as soon as possible.</p>
         </div>
         <div className="mt-6 flex justify-end">
           <Button
