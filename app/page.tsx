@@ -16,10 +16,10 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ContactModal } from "@/components/contact-modal"
+import { motion } from "framer-motion";
 
 export default function Page() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -238,13 +238,20 @@ export default function Page() {
         <section className="py-3 relative overflow-hidden">
           <div className="container px-4 md:px-6">
             <div className="flex justify-center mb-12">
-              <Image
-                src="/mindaide-logo.jpg"
-                alt="MindAide Labs Logo"
-                width="160"
-                height="160"
-                className="rounded-2xl opacity-90"
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="flex justify-center mb-12"
+              >
+                <Image
+                  src="/mindaide-logo.jpg"
+                  alt="MindAide Labs Logo"
+                  width="160"
+                  height="160"
+                  className="rounded-2xl opacity-90"
+                />
+              </motion.div>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-14 text-slate-800">
               Why Choose <span className="text-slate-600">MindAide</span>
