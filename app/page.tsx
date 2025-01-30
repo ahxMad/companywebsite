@@ -237,12 +237,12 @@ export default function Page() {
         {/* Features Section */}
         <section className="py-3 relative overflow-hidden">
           <div className="container px-4 md:px-6">
-            <div className="flex justify-center mb-12">
+            <div className="flex justify-center mb-6">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="flex justify-center mb-12"
+                className="flex justify-center mb-8"
               >
                 <Image
                   src="/mindaide-logo.jpg"
